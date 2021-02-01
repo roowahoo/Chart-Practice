@@ -1,5 +1,5 @@
 
-const options={
+const dogsOptions={
     'chart':{
         'type':'bar',
         'height':'100%'
@@ -15,18 +15,18 @@ const options={
     }
 
 }
-const chart =new ApexCharts(document.querySelector('#bar'),options);
-chart.render()
+const dogsChart =new ApexCharts(document.querySelector('#bar'),dogsOptions);
+dogsChart.render()
 
-// const options={
-//     'chart':{
-//         'type':'pie',
-//         'height':'100%'
-//     },
+const subjectOptions={
+    'chart':{
+        'type':'pie',
+        'height':'100%'
+    },
 
-//     'series':[10,20,30,40],
-//     'labels':['English', 'Mathematics', 'Science', 'Art'],
-//     'colors':['#A7CECB', '#8BA6A9']
-// }
-// const chart=new ApexCharts(document.querySelector('#pie'), options);
-// chart.render()
+    'series':[10,20,30,40],
+    'labels':['English', 'Mathematics', 'Science', 'Art'],
+    'colors':['#A7CECB', '#8BA6A9']
+}
+const subjectChart=new ApexCharts(document.querySelector('#pie'), subjectOptions);
+subjectChart.render()
