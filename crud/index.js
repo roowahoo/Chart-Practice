@@ -46,6 +46,15 @@ app.post('/movies/create', async (req,res)=>{
   res.redirect("/movies")
 })
 
+app.get("/movie/<movie_id>", async (req, res) => {
+  let movieId = req.params.movie_id;
+  let response = await axios.get(baseURL + "/movie/<movie_id>" + movieId);
+  let movie = response.data;
+  res.render("edit_movies.hbs", {
+    movieToEdit: movie
+  });
+});
+
 
 
 // START SERVER
