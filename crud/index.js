@@ -22,6 +22,8 @@ const baseURL = "https://ckx-movies-api.herokuapp.com";
 // SETUP END
 
 // SETUP THE ROUTES
+
+// Display all movies
 app.get("/movies", async (req, res) => {
   let response = await axios.get(baseURL + "/movies");
 
@@ -30,7 +32,7 @@ app.get("/movies", async (req, res) => {
   });
 });
 
-
+// Create movies
 app.get("/movies/create", (req, res) => {
   res.render("add-movies.hbs");
 });
@@ -46,6 +48,7 @@ app.post('/movies/create', async (req,res)=>{
   res.redirect("/movies")
 })
 
+// Edit movies
 app.get("/movies/edit/:movie_id", async (req, res) => {
   let movieId = req.params.movie_id;
   let response = await axios.get(baseURL + "/movie/" + movieId);
@@ -67,6 +70,25 @@ app.post('/movies/edit/:movie_id', async (req,res) => {
     await axios.patch(baseURL+'/movie/'+ movieId,updatedMovie);
     res.redirect('/movies')
 })
+
+// Delete movies
+app.get('/movies/delete/:movie_id', async (req,res)=>{
+    let movieId=req.params.movie_id;
+    let response=await axios.get(baseURL+'/movie/'+movieId);
+    let movie=response.data;
+
+    res.render('delete-movies.hbs', {
+        movieToDelete:movie
+    });
+})
+
+app.post("/movies/delete/:movie_id", async (req, res) => {
+  let movieId = req.params.movie_id;
+  let response = await axios.delete(baseURL + '/movie/' + movieId);
+  res.redirect('/movies');
+});
+
+
 
 
 
