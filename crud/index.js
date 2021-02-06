@@ -46,18 +46,31 @@ app.post('/movies/create', async (req,res)=>{
   res.redirect("/movies")
 })
 
-app.get("/movie/<movie_id>", async (req, res) => {
+app.get("/movies/edit/:movie_id", async (req, res) => {
   let movieId = req.params.movie_id;
-  let response = await axios.get(baseURL + "/movie/<movie_id>" + movieId);
+  let response = await axios.get(baseURL + "/movie/" + movieId);
   let movie = response.data;
-  res.render("edit_movies.hbs", {
+  
+  res.render("edit-movies.hbs", {
     movieToEdit: movie
   });
 });
+
+app.post('/movies/edit/:movie_id', async (req,res) => {
+    let movieId = req.params.movie_id;
+    let title=req.body.title;
+    let plot=req.body.plot;
+    let updatedMovie={
+        'title':title,
+        'plot':plot
+    }
+    await axios.patch(baseURL+'/movie/'+ movieId,updatedMovie);
+    res.redirect('/movies')
+})
 
 
 
 // START SERVER
 app.listen(3000, () => {
   console.log("Server has started");
-})
+});
