@@ -1,0 +1,54 @@
+{
+    "session_id": 900000,
+    "coach": {
+        "coach_name": "Paul",
+        "coach_certification": "Certified Swimming Coach 2021"
+    },
+    "date_and_time": "29/02/2020, 1200H",
+    "venue": {
+        "location": "Clementi Swimming Complex",
+        "address": "Clementi Avenue One"
+    },
+    "total_student_this_session": 3,
+    "student": [
+        {
+            "student_id": 800001,
+            "name": "Alice",
+            "parents": {
+                "parent_name": "Benny",
+                "parent_contact": 81238123
+            },
+            "payment": {
+                "preferred_payment": "PayNow",
+                "payment": "Paid",
+                "payment_reference": "29dcn3k1k1l2p3"
+            }
+        },
+        {
+            "student_id": 800002,
+            "name": "Bernard",
+            "parents": {
+                "parent_name": "James",
+                "parent_contact": 82238223
+            },
+            "payment": {
+                "preferred_payment": "Credit Card",
+                "payment": "Unpaid",
+                "payment_reference": ""
+            }
+        },
+        {
+            "student_id": 800003,
+            "name": "Charlie",
+            "parents": {
+                "parent_name": "David",
+                "parent_contact": 83338333
+            },
+            "payment": {
+                "preferred_payment": "PayNow",
+                "payment": "Paid",
+                "payment_reference": "9jo3mne0k3alw"
+            }
+        }
+    ]
+}
