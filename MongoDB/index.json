@@ -1,0 +1,28 @@
+{
+    "clinic_id": "742373278932",
+    "dentist": [
+        {
+            "dentist_id": "123"
+        },
+        {
+            "dentist_id": "124"
+        }
+    ],
+    "patients": [
+        {
+            "patient_id": "34545",
+            "name": "Carl",
+            "contact":"67676767",
+            "address":"",
+            "appointments": [
+                {
+                    "appt_id": "676"
+                },
+                {
+                    "appt_id": "789"
+                }
+            ]
+        
+        }
+    ]
+}
